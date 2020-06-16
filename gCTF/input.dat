@@ -1,10 +1,16 @@
 #input file for gCTF parser
-input_folder = /mnt/local-scratch/2020-06-10-test-gctf/ru,k,k#absolute path
+
+input_folder = /mnt/local-scratch/2020-06-10-test-gctf/run13
+
 image_folder = /mnt/local-scratch/2020-06-10-test-gctf/ #source folder for images NOT YET IMPLEMENTED
+
+image_selector = *RAW1.mrc    # image selector standard = .mrc
+
 num_img = 0 # number of images to analyze. o = all images, 100 will select 100 random images from the directory.NOT YET IMPLEMENTED
+
 cleanup = 1  # delete temporary mrc files after run NOT YET IMPLEMENTED
 
-extension = epa
+extension = mrc
 run_gctf = 1  #1 for run
 
 plot_mrc = 1  # 0 for run

@@ -6,14 +6,12 @@ import subprocess
 import numpy as np
 import mrcfile
 import matplotlib.pyplot as plt
-from matplotlib.backends.backend_pdf import PdfPages
 import matplotlib.gridspec as gridspec
 import cv2
 import glob
 import datetime
 import re
 import pandas as pd
-
 from matplotlib.backends.backend_pdf import PdfPages
 
 
@@ -29,7 +27,7 @@ list_res_lim = []
 
 
 def read_input(inputFile):
-    print("Reading parameter file....")
+    print("Reading parameter file....:",inputFile)
     if not inputFile:
         print("read input funktion needs the in put file as parameter"
               "please specify an input file"
@@ -259,7 +257,8 @@ def generate_tables(outfile="tables.csv"):
 
 ######   main program
 
-parameters = read_input("input.dat")
+parameters = read_input("/home/irsen/PycharmProjects/KRIOS/gCTF/input.dat")
+#print("paramters",parameters)
 image_list = []
 title_list = []
 extension = str(parameters["extension"])
@@ -269,11 +268,13 @@ num_cols = int(parameters["num_cols"])
 timest = datetime.datetime.now()
 timestamp = str(timest.strftime("%Y-%m-%d_%H_%M"))
 outpdf = timestamp+"_"+extension+".pdf"
+imagefolder = str(parameters["image_folder"])
 #print (outpdf)
 
 
-print("Enter/Paste your content. Ctrl-D or Ctrl-Z ( windows ) to save it.")
+print("Enter/Paste your content. return and Ctrl-D  to save it.")
 content = []
+meta = "experiment summary:"
 while True:
     try:
         line = input()
@@ -282,7 +283,8 @@ while True:
     content.append(line+"\n")
     meta = ' '.join(map(str, content))
 
-
+print(meta)
+print ("hallo")
 for file in files:
 #    print (file)
     title = file.split("/")
