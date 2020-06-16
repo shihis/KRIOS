@@ -1,0 +1,6 @@
+README.md
+setup.py
+KRIOS.egg-info/PKG-INFO
+KRIOS.egg-info/SOURCES.txt
+KRIOS.egg-info/dependency_links.txt
+KRIOS.egg-info/top_level.txt
