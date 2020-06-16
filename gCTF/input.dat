@@ -1,4 +1,6 @@
 #input file for gCTF parser
+# for running gctf change extension to mrc and run gctf to 1
+
 
 input_folder = /mnt/local-scratch/2020-06-10-test-gctf/run13
 
