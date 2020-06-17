@@ -6,29 +6,28 @@ input_folder = /mnt/local-scratch/2020-06-10-test-gctf/run13
 
 image_folder = /mnt/local-scratch/2020-06-10-test-gctf/ #source folder for images NOT YET IMPLEMENTED
 
-image_selector = *RAW1.mrc    # image selector standard = .mrc
-
-num_img = 0 # number of images to analyze. o = all images, 100 will select 100 random images from the directory.NOT YET IMPLEMENTED
+image_selector = *RAW1.mrc    # image selector standard = .mrc NOT YET IMPLEMENTED
 
 cleanup = 1  # delete temporary mrc files after run NOT YET IMPLEMENTED
 
-extension = mrc
-run_gctf = 1  #1 for run
+extension = epa # set extension for image gallery mrc MUST be set for gCTF, epa for only analyzing
 
-plot_mrc = 1  # 0 for run
+run_gctf = 1  #1 for run if extension is not mrc gCTF is automatically deactivated
+
+plot_mrc = 1  # 1 to create image gallery
 num_cols = 4 # parameter for image gallery
 thumb_size = 512 # thumb size for image gallery
 
-parse_gctf_log = 1 # 1 for  run
-plot_grpahs = 1
+parse_gctf_log = 1 # 1 for analysing gctf log files
+plot_grpahs = 1  # plot graphs on screen in addition to pdf file
 generate_tables = 1
 create_pdf = 1
 
 #experiment summary
 # run pp data, changed pp searstep to 5 ccc min, set box 512
-#gCTF parameter
+# gCTF parameter
 
-binary = /opt/relion3/Gctf_v1.18/gctf_pp   #locatoin of gCTF bin file
+binary = /opt/relion3/Gctf_v1.18/gctf_pp   #location of gCTF bin file
 #The following parameters are implemented
 
 --apix      =          1.06         #     Pixel size
@@ -39,7 +38,7 @@ binary = /opt/relion3/Gctf_v1.18/gctf_pp   #locatoin of gCTF bin file
 --phase_shift_L   =    30           #     User defined phase shift, lowest phase shift,  in degree; typically, ~90.0 for micrographs using phase plate
 --phase_shift_H   =    100          #     User defined phase shift, highest phase shift, final range will be (phase_shift_L, phase_shift_H)
 --phase_shift_S   =    5.0          #     User defined phase shift search step; don't worry about the accuracy; this is just the search step, Gctf will refine the phase shift anyway.
---phase_shift_T   =    1            #     Phase shift target in the search; 1: CCC; 2: resolution limit;
+--phase_shift_T   =    2            #     Phase shift target in the search; 1: CCC; 2: resolution limit;
 --cosearch_refine_ps  = 0           #      Specify this option to do refinement during phase shift search. Default approach is to do refinement after search
 --refine_2d_T        = 1            #     Refinement type: 1, 2, 3 allowed; NOTE:  --phase_shift_T is the overall target, but refine_2d_T is the concrete refinement approaches.
 --resL           =     100          #     Lowest Resolution to be used for search, in angstrom

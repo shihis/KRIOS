@@ -257,7 +257,7 @@ def generate_tables(outfile="tables.csv"):
 
 ######   main program
 
-parameters = read_input("/home/irsen/PycharmProjects/KRIOS/gCTF/input.dat")
+parameters = read_input("input.dat")
 #print("paramters",parameters)
 image_list = []
 title_list = []
@@ -283,8 +283,8 @@ while True:
     content.append(line+"\n")
     meta = ' '.join(map(str, content))
 
-print(meta)
-print ("hallo")
+#print(meta)
+#print ("hallo")
 for file in files:
 #    print (file)
     title = file.split("/")
